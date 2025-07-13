@@ -1,6 +1,7 @@
 package org.example.lv2;
 
 import java.util.InputMismatchException;
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -54,28 +55,43 @@ public class Calculator {
     }
 
     //계산수행 메소드
-    public void performCalculation(int num1, int num2, String mathSymbol) {
+    public int performCalculation(int num1, int num2, String mathSymbol) {
 
         switch (mathSymbol) {
             case "+":
                 this.result = num1 + num2;
-                System.out.println("결과 계산 : " + result);
+//                System.out.println("결과 계산 : " + result);
                 break;
             case "-":
                 this.result = num1 - num2;
-                System.out.println("결과 계산 : " + result);
+//                System.out.println("결과 계산 : " + result);
                 break;
             case "*":
                 this.result = num1 * num2;
-                System.out.println("결과 계산 : " + result);
+//                System.out.println("결과 계산 : " + result);
                 break;
             case "/":
                     this.result = num1 / num2;
-                    System.out.println("결과 계산 : " + result);
+//                    System.out.println("결과 계산 : " + result);
                 break;
-            default:
-                System.out.println("사칙연산 입력값이 올바르지 않습니다.");
-                return;
         };
+        saveResult(result);
+        return result;
     }
+
+
+    //결과값 저장하기 컬렉션(linkedList 활용)
+    LinkedList<Integer> resultHistory = new LinkedList<Integer>();
+    public void saveResult(int result) {
+        if(resultHistory.size() >= 5){    //최근 결과값 5개만 저장
+            resultHistory.poll();         //저장된 결과값이 5개가 넘으면 가장 먼저 저장된 값 삭제하기
+        }
+        resultHistory.add(result);        //연산결과 저장
+    }
+
+    //컬렉션 저장 잘됐나 확인하는 getter 메서드
+    public LinkedList<Integer> getResultHistory() {
+        return resultHistory;
+    }
+
 }
