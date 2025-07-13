@@ -44,6 +44,9 @@ public class main {
             // 연산 수행
             calculator.performCalculation(num1, num2, mathSymbol);
 
+            //결과 출력(컬렉션 잘 저장됐나 확인용****)
+            System.out.println("결과: " + calculator.getResultHistory());
+
             //더 계산할지 입력받기
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
             exit = scanner.nextLine();
