@@ -70,12 +70,8 @@ public class Calculator {
                 System.out.println("결과 계산 : " + result);
                 break;
             case "/":
-                if (num2 == 0) {
-                    throw new ArithmeticException("0으로 나눌 수 없습니다.");
-                } else {
                     this.result = num1 / num2;
                     System.out.println("결과 계산 : " + result);
-                }
                 break;
             default:
                 System.out.println("사칙연산 입력값이 올바르지 않습니다.");
