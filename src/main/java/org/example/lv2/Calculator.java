@@ -89,11 +89,11 @@ public class Calculator {
         resultHistory.add(result);        //연산결과 저장
     }
 
-    //컬렉션 저장 잘됐나 확인하는 getter 메서드
-//    public LinkedList<Integer> getResultHistory() {
-//        return resultHistory;
-//    }
-//
+    //결과값 컬렉션 가져오는 getter 메서드
+    public LinkedList<Integer> getResultHistory() {
+        return resultHistory;
+    }
+
     //가장 최근값(현재 계산한) 계산 결과 getter 메서드
     public int getLast() {
         return resultHistory.getLast();
