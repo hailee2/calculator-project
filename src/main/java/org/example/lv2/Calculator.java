@@ -14,7 +14,7 @@ public class Calculator {
     private String mathSymbol;
     private int result;
 
-    //첫번째 숫자 입력받기 (숫자 외 입력시 예외 발생)
+    //첫번째 숫자 입력받기 메서드 (숫자 외 입력시 예외 발생)
     public int scanner1() {
         System.out.print("첫 번째 숫자를 입력하세요 : ");
         if (!scanner.hasNextInt()) {
@@ -27,7 +27,7 @@ public class Calculator {
         }
     }
 
-    //연산자 입력 (연산기호 외 입력시 예외 발생)
+    //연산자 입력받기 메서드 (연산기호 외 입력시 예외 발생)
     public String scanner2() {
         System.out.print("사칙연산 기호(+,-,*,/)를 입력하세요 : ");
         mathSymbol = scanner.nextLine();
@@ -38,7 +38,7 @@ public class Calculator {
         return mathSymbol;
     }
 
-    //두번째 숫자 입력받기
+    //두번째 숫자 입력받기 메세드
     public int scanner3() {
         System.out.print("두 번째 숫자를 입력하세요 : ");
         if (!scanner.hasNextInt()) {
@@ -90,8 +90,13 @@ public class Calculator {
     }
 
     //컬렉션 저장 잘됐나 확인하는 getter 메서드
-    public LinkedList<Integer> getResultHistory() {
-        return resultHistory;
-    }
+//    public LinkedList<Integer> getResultHistory() {
+//        return resultHistory;
+//    }
+//
+    //가장 최근값(현재 계산한) 계산 결과 getter 메서드
+    public int getLast() {
+        return resultHistory.getLast();
+        }
 
 }
